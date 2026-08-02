@@ -141,14 +141,6 @@ Kali
 - [WIN11 Setup](lab-setup/win11-setup.md)
 - [DC01 Setup](lab-setup/dc01-setup.md)
 
----
-
-## Status
-
-- [x] Lab built and configured
-- [x] All misconfigs seeded
-- [ ] Attack chain executed (in progress)
-- [ ] Writeups complete
 
 ---
 
