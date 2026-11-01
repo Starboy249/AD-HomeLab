@@ -1,0 +1,18 @@
+<!-- Custom Wazuh rules for AD lab detection -->
+<!-- Author: Starboy | github.com/Starboy249/AD-HomeLab -->
+
+<group name="kerberoasting,attack,">
+
+  <rule id="100001" level="12">
+    <if_sid>60105</if_sid>
+    <field name="win.eventdata.serviceName" negate="yes">.*\$$</field>
+    <field name="win.eventdata.serviceName" negate="yes">krbtgt</field>
+    <field name="win.eventdata.ticketEncryptionType">23</field>
+    <description>Possible Kerberoasting: RC4 ticket requested for $(win.eventdata.serviceName) by $(win.eventdata.targetUserName)</description>
+    <mitre>
+      <id>T1558.003</id>
+    </mitre>
+    <group>kerberoasting,credential_access,</group>
+  </rule>
+
+</group>
